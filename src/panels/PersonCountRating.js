@@ -35,22 +35,7 @@ class PersonCountRating extends React.Component {
         }
     }
 
-     getUserInfoFromVk(ratingUsers) {
-        const users = []
-        ratingUsers.map(async user => {
-            const userRating = await bridge.send('VKWebAppGetUserInfo', {user_id: user.vkUserId})
-            users.push({
-                first_name: userRating.first_name,
-                last_name: userRating.last_name,
-                coin: user.coin,
-                avatar: userRating.photo_100
-            })
-        })
-        return users
-    }
-
     render() {
-        const collectUsers = this.getUserInfoFromVk(this.state.ratingUsers)
         return (
             <>
                 <Div>
@@ -59,7 +44,14 @@ class PersonCountRating extends React.Component {
                 {this.state.ratingUsers.length > 1 ?
                     <Div>
                         <Text weight="semibold">Рейтинг TOP 10</Text>
-                        {console.log(collectUsers)}
+                        {this.state.ratingUsers.map((user, index) => <RatingUser
+                            key={user._id}
+                            index={index+1}
+                            firstName={user.first_name}
+                            lastName={user.last_name}
+                            coin={user.coin}
+                            avatar={user.avatar}
+                        />)}
                     </Div>
                     : ''}
             </>
