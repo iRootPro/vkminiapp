@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'https://195.161.114.20/'
+    baseURL: 'https://rootjspy.ru/'
 })
 
 export const api = {

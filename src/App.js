@@ -51,12 +51,10 @@ const App = () => {
     };
     if (!skipShowIntro) {
         return (
-
             <View activePanel={activePanel} popout={popout}>
                 <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go}/>
                 <Intro id={ROUTES.INTRO} go={go}/>
             </View>
-
         )
     } else {
         return (

@@ -11,18 +11,21 @@ const Main = () => {
     const [activeTab, setActiveTab] = useState('person')
     const [coin, setCoin] = useState(0)
 
-    useEffect(async () => {
-        try {
-            const userVk = await bridge.send('VKWebAppGetUserInfo')
-            if (!userVk.error_type) {
-                api.getInfo(userVk.id)
-                    .then(res => {
-                        setCoin(res.data.coin)
-                    })
+    useEffect(() => {
+        async function getUserInfo() {
+            try {
+                const userVk = await bridge.send('VKWebAppGetUserInfo')
+                if (!userVk.error_type) {
+                    api.getInfo(userVk.id)
+                        .then(res => {
+                            setCoin(res.data.coin)
+                        })
+                }
+            } catch (e) {
+                console.log(e)
             }
-        } catch (e) {
-            console.log(e)
         }
+        getUserInfo()
     }, [])
 
 

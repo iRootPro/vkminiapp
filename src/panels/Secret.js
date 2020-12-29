@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormLayout, Panel, PanelHeader, Slider, FormLayoutGroup} from "@vkontakte/vkui";
+import {Slider, FormLayoutGroup} from "@vkontakte/vkui";
 
 
 class Secret extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import bridge from "@vkontakte/vk-bridge"
-import {Div, List, Text} from "@vkontakte/vkui";
+import {Div, Text} from "@vkontakte/vkui";
 import {api} from "../api/api";
 import RatingUser from "../components/RatingUser";
 

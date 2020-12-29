@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {platform, IOS, Button, Group, Cell} from '@vkontakte/vkui';
+import {Button, Group, Cell} from '@vkontakte/vkui';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import bridge from "@vkontakte/vk-bridge"
 
 import './Intro.css';
 
-const osName = platform();
 
 const Intro = props => {
 	const handleClickIntro = async () => {
